@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord DustLofy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://motionbgs.com/dl/gif/1036') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(97, 10, 14, 0.938);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            background-color: #23272A;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #99AAB5;
+        }
+        .profile {
+            margin-top: 20px;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+        .badges {
+            margin-top: 10px;
+        }
+        .badges img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
+        .tracker {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        .video-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: 169px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>DustLofy</h1>
+        <p>Discord Profile </p>
+        <a href="https://discordapp.com/users/1100293065912102973" target="_blank">Visitar Meu Perfil</a>
+        
+        <div class="profile">
+            <img id="profile-pic" src="https://i.imgur.com/UKrc1gl.jpeg" alt="Foto do Perfil">
+            <div class="tracker" id="tracker"> donotstopdreaming - <span id="view-count"></span></div>
+        </div>
+        
+        <div class="badges" id="badges">
+            <img src="https://cdn3.emoji.gg/emojis/5630-discord-nitro.png" alt="Nitro">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Discord_Active_Developer_Badge.svg" alt="devbadge">
+            <img src="https://cdn3.emoji.gg/emojis/4414-boosting-five.png" alt="12 months">
+            <img src="https://cdn3.emoji.gg/emojis/8838-legacyusernamebadge.png" alt="Badge hashitag">
+            <img src="https://cdn3.emoji.gg/emojis/30647-completed-quest.png" alt="Mission">
+            <div class="tracker">Desenvolvido por dustlofy - lofygang</div>
+        </div>
+    </div>
+
+    <!-- Vídeo fixo do YouTube com autoplay -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/4FCBSN9E01o?autoplay=1&mute=1" allow="autoplay" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // Função para rastrear visualizações de perfil
+        function trackProfileViews() {
+            let views = localStorage.getItem('profileViews') || 0;
+            views++;
+            localStorage.setItem('profileViews', views);
+            document.getElementById('view-count').textContent = views;
+        }
+        
+        window.onload = function() {
+            trackProfileViews();
+        };
+    </script>
+
+</body>
+</html>
